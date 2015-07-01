@@ -24,47 +24,50 @@ public class GroupCreationTests {
   }
 
   @Test
-  public void testUntitled() throws Exception {
-	  openMainPage();
+  public void testNonEmptyGroupCreation() throws Exception {
+	openMainPage();
     goToGroupsPage();
     initNewGroupCreation();
-    fillGroupForm();
+    fillGroupForm("Eddie_would_go", "header", "footer");
     submitGroupCreation();
     returnToGroupsPage();
   }
 
+  @Test
+  public void testEmptyGroupCreation() throws Exception {
+	openMainPage();
+    goToGroupsPage();
+    initNewGroupCreation();
+    fillGroupForm(" ", " ", " ");
+    submitGroupCreation();
+    returnToGroupsPage();
+  }
 private void returnToGroupsPage() {
-	//return to groups page
     driver.findElement(By.linkText("group page")).click();
 }
 
 private void submitGroupCreation() {
-	//submit group creation
     driver.findElement(By.name("submit")).click();
 }
 
-private void fillGroupForm() {
-	// fill group form
+private void fillGroupForm(String name, String header, String footer) {
     driver.findElement(By.name("group_name")).clear();
-    driver.findElement(By.name("group_name")).sendKeys("Eddie_would_go");
+    driver.findElement(By.name("group_name")).sendKeys(name);
     driver.findElement(By.name("group_header")).clear();
-    driver.findElement(By.name("group_header")).sendKeys("header");
+    driver.findElement(By.name("group_header")).sendKeys(header);
     driver.findElement(By.name("group_footer")).clear();
-    driver.findElement(By.name("group_footer")).sendKeys("footer");
+    driver.findElement(By.name("group_footer")).sendKeys(footer);
 }
 
 private void initNewGroupCreation() {
-	// init new group creation
     driver.findElement(By.name("new")).click();
 }
 
 private void goToGroupsPage() {
-	//open groups page
     driver.findElement(By.linkText("groups")).click();
 }
 
 private void openMainPage() {
-	//open main page
     driver.get(baseUrl + "/addressbookv4.1.4/");
 }
 
