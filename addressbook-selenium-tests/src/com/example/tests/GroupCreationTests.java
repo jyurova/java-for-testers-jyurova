@@ -25,24 +25,48 @@ public class GroupCreationTests {
 
   @Test
   public void testUntitled() throws Exception {
-	  //open main page
-    driver.get(baseUrl + "/addressbookv4.1.4/");
-    //open groups page
-    driver.findElement(By.linkText("groups")).click();
-    // init new group creation
-    driver.findElement(By.name("new")).click();
-    // fill group form
+	  openMainPage();
+    goToGroupsPage();
+    initNewGroupCreation();
+    fillGroupForm();
+    submitGroupCreation();
+    returnToGroupsPage();
+  }
+
+private void returnToGroupsPage() {
+	//return to groups page
+    driver.findElement(By.linkText("group page")).click();
+}
+
+private void submitGroupCreation() {
+	//submit group creation
+    driver.findElement(By.name("submit")).click();
+}
+
+private void fillGroupForm() {
+	// fill group form
     driver.findElement(By.name("group_name")).clear();
     driver.findElement(By.name("group_name")).sendKeys("Eddie_would_go");
     driver.findElement(By.name("group_header")).clear();
     driver.findElement(By.name("group_header")).sendKeys("header");
     driver.findElement(By.name("group_footer")).clear();
     driver.findElement(By.name("group_footer")).sendKeys("footer");
-    //submit group creation
-    driver.findElement(By.name("submit")).click();
-    //return to groups page
-    driver.findElement(By.linkText("group page")).click();
-  }
+}
+
+private void initNewGroupCreation() {
+	// init new group creation
+    driver.findElement(By.name("new")).click();
+}
+
+private void goToGroupsPage() {
+	//open groups page
+    driver.findElement(By.linkText("groups")).click();
+}
+
+private void openMainPage() {
+	//open main page
+    driver.get(baseUrl + "/addressbookv4.1.4/");
+}
 
   @After
   public void tearDown() throws Exception {
