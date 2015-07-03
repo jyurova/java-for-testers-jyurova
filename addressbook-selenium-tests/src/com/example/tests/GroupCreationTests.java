@@ -28,7 +28,10 @@ public class GroupCreationTests {
 	openMainPage();
     goToGroupsPage();
     initNewGroupCreation();
-    GroupData group = new GroupData("Eddie_would_go", "header", "footer");
+    GroupData group = new GroupData();
+    group.name = "group name 1";
+    group.header = "header 1";
+    group.footer = "footer 1";    	
 	fillGroupForm(group);
     submitGroupCreation();
     returnToGroupsPage();
@@ -53,7 +56,7 @@ private void submitGroupCreation() {
 
 private void fillGroupForm(GroupData group) {
     driver.findElement(By.name("group_name")).clear();
-    driver.findElement(By.name("group_name")).sendKeys(group.groupname);
+    driver.findElement(By.name("group_name")).sendKeys(group.name);
     driver.findElement(By.name("group_header")).clear();
     driver.findElement(By.name("group_header")).sendKeys(group.header);
     driver.findElement(By.name("group_footer")).clear();
