@@ -11,20 +11,31 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 
 public class TestBase {
 
-	private WebDriver driver;
-	private String baseUrl;
-	private boolean acceptNextAlert = true;
-	private StringBuffer verificationErrors = new StringBuffer();
+	private static WebDriver driver;
+	private static String baseUrl;
+	private static boolean acceptNextAlert = true;
+	private static StringBuffer verificationErrors = new StringBuffer();
 
-	@BeforeClass
+	@BeforeTest
 	public void setUp() throws Exception {
 	    driver = new FirefoxDriver();
 	    baseUrl = "http://localhost/";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  }
+
+	@AfterTest 
+	public void tearDown() throws Exception {
+	    driver.quit();
+	    String verificationErrorString = verificationErrors.toString();
+	    if (!"".equals(verificationErrorString)) {
+	      fail(verificationErrorString);
+	    }
 	  }
 
 	protected void returnToGroupsPage() {
@@ -56,14 +67,6 @@ public class TestBase {
 	    driver.get(baseUrl + "/addressbookv4.1.4/");
 	}
 
-	@AfterClass
-	public void tearDown() throws Exception {
-	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
-	  }
 
 	private boolean isElementPresent(By by) {
 	    try {
