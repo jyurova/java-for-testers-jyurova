@@ -6,8 +6,8 @@ public class NewContact extends TestBase {
 
   @Test
   public void testNewContactNonEmpty() throws Exception {
-    openMainPage();
-    initNewContactCreation();
+    app.openMainPage();
+    app.initNewContactCreation();
     ContactData contact = new ContactData();
     contact.firstname = "Petr";
     contact.lastName = "Petrov";
@@ -22,18 +22,18 @@ public class NewContact extends TestBase {
     contact.phone2 = "987654";
     contact.bday = "22";
     contact.bmonth = "May";  
-	fillGroupForm(contact);
-    submit();
-    returnToHP();
+	app.fillGroupForm(this, contact);
+    app.submit();
+    app.returnToHP();
   }
  
   @Test
   public void testNewContactEmpty() throws Exception {
-	    openMainPage();
-	    initNewContactCreation();
-	    fillGroupForm(new ContactData("", "", "", "", "", "", "", "", "", "", "", "7", "April"));
-	    submit();
-	    returnToHP();
+	    app.openMainPage();
+	    app.initNewContactCreation();
+	    app.fillGroupForm(this, new ContactData("", "", "", "", "", "", "", "", "", "", "", "7", "April"));
+	    app.submit();
+	    app.returnToHP();
 	  }
 }
 
