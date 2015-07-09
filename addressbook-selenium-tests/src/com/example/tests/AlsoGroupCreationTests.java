@@ -6,25 +6,25 @@ public class AlsoGroupCreationTests extends TestBase {
  
   @Test
   public void testNonEmptyGroupCreation() throws Exception {
-	app.navigationHelper.openMainPage();
-    app.navigationHelper.manager.groupHelper.goToGroupsPage(app.navigationHelper.manager, app.navigationHelper);
-    app.groupHelper.initNewGroupCreation();
+	app.getNavigationHelper().openMainPage();
+    app.getGroupHelper().goToGroupsPage();
+    app.getGroupHelper().initNewGroupCreation();
     GroupData group = new GroupData();
     group.name = "group name 1";
     group.header = "header 1";
     group.footer = "footer 1";    	
-	app.groupHelper.fillGroupForm(group);
-    app.groupHelper.submitGroupCreation();
-    app.navigationHelper.returnToGroupsPage();
+	app.getGroupHelper().fillGroupForm(group);
+    app.getGroupHelper().submitGroupCreation();
+    app.getNavigationHelper().returnToGroupsPage();
   }
 
   @Test
   public void testEmptyGroupCreation() throws Exception {
-	app.navigationHelper.openMainPage();
-    app.navigationHelper.manager.groupHelper.goToGroupsPage(app.navigationHelper.manager, app.navigationHelper);
-    app.groupHelper.initNewGroupCreation();
-    app.groupHelper.fillGroupForm(new GroupData(" ", " ", " "));
-    app.groupHelper.submitGroupCreation();
-    app.navigationHelper.returnToGroupsPage();
+	app.getNavigationHelper().openMainPage();
+    app.getGroupHelper().goToGroupsPage();
+    app.getGroupHelper().initNewGroupCreation();
+    app.getGroupHelper().fillGroupForm(new GroupData(" ", " ", " "));
+    app.getGroupHelper().submitGroupCreation();
+    app.getNavigationHelper().returnToGroupsPage();
   }
 }

@@ -1,8 +1,6 @@
 package com.example.fw;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
-
 import com.example.tests.ContactData;
 
 public class ContactHelper extends HelperBase{
@@ -11,45 +9,33 @@ public class ContactHelper extends HelperBase{
 	}
 
 	public void initNewContactCreation() {
-		driver.findElement(By.linkText("add new")).click();
+		click(By.linkText("add new"));
 	}
 
-	public void fillContactForm(ContactData parameterObject) {
-			driver.findElement(By.name("firstname")).clear();
-		    driver.findElement(By.name("firstname")).sendKeys(parameterObject.firstname);
-		    driver.findElement(By.name("lastname")).clear();
-		    driver.findElement(By.name("lastname")).sendKeys(parameterObject.lastName);
-		    driver.findElement(By.name("address")).clear();
-		    driver.findElement(By.name("address")).sendKeys(parameterObject.address);
-		    driver.findElement(By.name("home")).clear();
-		    driver.findElement(By.name("home")).sendKeys(parameterObject.homePhone);
-		    driver.findElement(By.name("mobile")).clear();
-		    driver.findElement(By.name("mobile")).sendKeys(parameterObject.mobilePhone);
-		    driver.findElement(By.name("work")).clear();
-		    driver.findElement(By.name("work")).sendKeys(parameterObject.workPhone);
-		    driver.findElement(By.name("email")).clear();
-		    driver.findElement(By.name("email")).sendKeys(parameterObject.email1);
-		    driver.findElement(By.name("email2")).clear();
-		    driver.findElement(By.name("email2")).sendKeys(parameterObject.email2);
-		    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(parameterObject.bday);
-		    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(parameterObject.bmonth);
-		    driver.findElement(By.name("byear")).clear();
-		    driver.findElement(By.name("byear")).sendKeys(parameterObject.yearBD);
-		    new Select(driver.findElement(By.name("new_group"))).selectByVisibleText("Eddie_would_go");
-		    driver.findElement(By.name("address2")).clear();
-		    driver.findElement(By.name("address2")).sendKeys(parameterObject.address2);
-		    driver.findElement(By.name("phone2")).clear();
-		    driver.findElement(By.name("phone2")).sendKeys(parameterObject.phone2);
+	public void fillContactForm(ContactData contact) {
+			type(By.name("firstname"), contact.firstname);
+			type(By.name("lastname"), contact.lastName);
+			type(By.name("address"), contact.address);
+			type(By.name("home"), contact.homePhone);
+			type(By.name("mobile"), contact.mobilePhone);
+			type(By.name("work"), contact.workPhone);
+			type(By.name("email"), contact.email1);
+			type(By.name("emai2"), contact.email2);
+		    selectByTest(By.name("bday"), contact.bday);
+		    selectByTest(By.name("bmonth"), contact.bmonth);
+		    type(By.name("byear"), contact.yearBD);
+		    //selectByTest(By.name("new_group"), "Eddie_would_go");
+		    type(By.name("address2"), contact.address2);
+		    type(By.name("phone2"), contact.phone2);
+
 		}
 
-
-
 	public void submit() {
-			driver.findElement(By.name("submit")).click();
+			click(By.name("submit"));
 		}
 	
 	public void returnToHP() {
-		driver.findElement(By.linkText("home page")).click();
+		click(By.linkText("home page"));
 	}
 
 

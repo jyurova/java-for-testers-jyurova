@@ -9,7 +9,7 @@ public class NavigationHelper extends HelperBase{
 	}
 
 	public void returnToGroupsPage() {
-	    driver.findElement(By.linkText("group page")).click();
+	    click(By.linkText("group page"));
 	}
 
 	public void openMainPage() {
