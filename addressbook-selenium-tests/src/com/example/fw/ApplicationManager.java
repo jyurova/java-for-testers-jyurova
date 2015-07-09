@@ -26,7 +26,7 @@ public class ApplicationManager {
 	}
 	
 	public NavigationHelper getNavigationHelper() {
-		if (navigationHelper == null){
+		if (navigationHelper == null) {
 			navigationHelper = new NavigationHelper(this);	
 		}
 		return navigationHelper;

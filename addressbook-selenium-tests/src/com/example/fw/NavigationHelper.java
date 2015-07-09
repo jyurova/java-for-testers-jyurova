@@ -13,7 +13,7 @@ public class NavigationHelper extends HelperBase{
 	}
 
 	public void openMainPage() {
-		    driver.get(manager.baseUrl + "/addressbookv4.1.4/");
+		manager.driver.get(manager.baseUrl + "/addressbookv4.1.4/");
 		}
 
 

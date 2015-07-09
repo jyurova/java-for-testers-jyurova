@@ -14,5 +14,4 @@ public class GroupModificationTests extends TestBase {
 		app.getGroupHelper().submitGroupModification();
 	    app.getNavigationHelper().returnToGroupsPage();
 	}
-
 }
