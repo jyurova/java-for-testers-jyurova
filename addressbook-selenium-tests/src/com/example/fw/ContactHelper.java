@@ -19,7 +19,7 @@ public class ContactHelper extends HelperBase{
 			type(By.name("home"), contact.homePhone);
 			type(By.name("mobile"), contact.mobilePhone);
 			type(By.name("work"), contact.workPhone);
-			type(By.name("email"), contact.email1);
+			type(By.name("email"), contact.email);
 			type(By.name("emai2"), contact.email2);
 		    selectByTest(By.name("bday"), contact.bday);
 		    selectByTest(By.name("bmonth"), contact.bmonth);

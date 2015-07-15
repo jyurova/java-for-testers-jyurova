@@ -15,13 +15,13 @@ public class NewContact extends TestBase {
     contact.homePhone = "12345r";
     contact.mobilePhone = "P12345";
     contact.workPhone = "12334v";
-    contact.email1 = "Petrov@bla.bla";
+    contact.email = "Petrov@bla.bla";
     contact.email2 = "Petrov@qwe.qwe";
     contact.yearBD = "7896";
     contact.address2 = "home2";
     contact.phone2 = "987654";
-    contact.bday = "22";
-    contact.bmonth = "May";  
+    //contact.bday = "22";
+   // contact.bmonth = "May";  
 	app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submit();
     app.getContactHelper().returnToHP();

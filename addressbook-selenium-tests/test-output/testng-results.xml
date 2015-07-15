@@ -2,45 +2,29 @@
 <testng-results skipped="0" failed="2" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69111" started-at="2015-07-09T16:51:50Z" finished-at="2015-07-09T16:53:00Z">
+  <suite name="Default suite" duration-ms="28000" started-at="2015-07-15T18:49:03Z" finished-at="2015-07-15T18:49:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69111" started-at="2015-07-09T16:51:50Z" finished-at="2015-07-09T16:53:00Z">
+    <test name="Default test" duration-ms="28000" started-at="2015-07-15T18:49:03Z" finished-at="2015-07-15T18:49:31Z">
       <class name="com.example.tests.NewContact">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="setUp" is-config="true" duration-ms="6328" started-at="2015-07-09T19:51:50Z" finished-at="2015-07-09T19:51:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="setUp" is-config="true" duration-ms="7197" started-at="2015-07-15T21:49:03Z" finished-at="2015-07-15T21:49:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="testNewContactEmpty()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="testNewContactEmpty" duration-ms="31108" started-at="2015-07-09T19:51:57Z" finished-at="2015-07-09T19:52:28Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="testNewContactEmpty()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="testNewContactEmpty" duration-ms="18073" started-at="2015-07-15T21:49:10Z" finished-at="2015-07-15T21:49:28Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"name","selector":"emai2"}
-Command duration or timeout: 30.03 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Error communicating with the remote browser. It may have died.
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
 System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=39.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
-*** Element info: {Using=name, value=emai2}]]>
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"name","selector":"emai2"}
-Command duration or timeout: 30.03 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
 System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=39.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
-*** Element info: {Using=name, value=emai2}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:431)
 	at org.openqa.selenium.By$ByName.findElement(By.java:300)
@@ -72,56 +56,59 @@ Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"name","selector":"emai2"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
-System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/jyurova/AppData/Local/Temp/anonymous7032077580865998099webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/jyurova/AppData/Local/Temp/anonymous7032077580865998099webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:161)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 31 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 46 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNewContactEmpty -->
-        <test-method status="FAIL" signature="testNewContactNonEmpty()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="testNewContactNonEmpty" duration-ms="31009" started-at="2015-07-09T19:52:28Z" finished-at="2015-07-09T19:52:59Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="testNewContactNonEmpty()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="testNewContactNonEmpty" duration-ms="1014" started-at="2015-07-15T21:49:28Z" finished-at="2015-07-15T21:49:30Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"name","selector":"emai2"}
-Command duration or timeout: 30.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Error communicating with the remote browser. It may have died.
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
 System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=39.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
-*** Element info: {Using=name, value=emai2}]]>
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"name","selector":"emai2"}
-Command duration or timeout: 30.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
 System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=39.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
-*** Element info: {Using=name, value=emai2}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:431)
-	at org.openqa.selenium.By$ByName.findElement(By.java:300)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.example.fw.HelperBase.type(HelperBase.java:57)
-	at com.example.fw.ContactHelper.fillContactForm(ContactHelper.java:23)
-	at com.example.tests.NewContact.testNewContactNonEmpty(NewContact.java:25)
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:306)
+	at com.example.fw.NavigationHelper.openMainPage(NavigationHelper.java:16)
+	at com.example.tests.NewContact.testNewContactNonEmpty(NewContact.java:9)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -146,20 +133,115 @@ Session ID: 36517e95-3c76-4133-bc13-b09ac0a7bbee
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"name","selector":"emai2"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
-System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
-Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/jyurova/AppData/Local/Temp/anonymous7032077580865998099webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10299)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/jyurova/AppData/Local/Temp/anonymous7032077580865998099webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:603)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 27 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 42 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNewContactNonEmpty -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="tearDown" is-config="true" duration-ms="644" started-at="2015-07-09T19:52:59Z" finished-at="2015-07-09T19:53:00Z">
+        <test-method status="FAIL" signature="tearDown()[pri:0, instance:com.example.tests.NewContact@46f5f779]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-07-15T21:49:30Z" finished-at="2015-07-15T21:49:30Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
+            <message>
+              <![CDATA[Error communicating with the remote browser. It may have died.
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
+System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: '2.46.0', revision: '87c69e2', time: '2015-06-04 16:16:47'
+System info: host: 'jyurova-spb', ip: '192.168.56.1', os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.8.0_45'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:628)
+	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:474)
+	at com.example.fw.ApplicationManager.stop(ApplicationManager.java:24)
+	at com.example.tests.TestBase.tearDown(TestBase.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1014)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:143)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:89)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:134)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.execute(NewProfileExtensionConnection.java:168)
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:392)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:578)
+	... 26 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 41 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

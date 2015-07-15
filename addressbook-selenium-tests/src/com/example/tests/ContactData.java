@@ -7,7 +7,7 @@ public class ContactData {
 	public String homePhone;
 	public String mobilePhone;
 	public String workPhone;
-	public String email1;
+	public String email;
 	public String email2;
 	public String yearBD;
 	public String address2;
@@ -17,7 +17,7 @@ public class ContactData {
 
 	public ContactData(String firstname, String lastName, String address,
 			String homePhone, String mobilePhone, String workPhone,
-			String email1, String email2, String yearBD, String address2,
+			String email, String email2, String yearBD, String address2,
 			String phone2, String bday, String bmonth) {
 		this.firstname = firstname;
 		this.lastName = lastName;
@@ -25,7 +25,7 @@ public class ContactData {
 		this.homePhone = homePhone;
 		this.mobilePhone = mobilePhone;
 		this.workPhone = workPhone;
-		this.email1 = email1;
+		this.email = email;
 		this.email2 = email2;
 		this.yearBD = yearBD;
 		this.address2 = address2;
