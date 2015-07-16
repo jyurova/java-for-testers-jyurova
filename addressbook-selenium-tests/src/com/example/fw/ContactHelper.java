@@ -20,11 +20,11 @@ public class ContactHelper extends HelperBase{
 			type(By.name("mobile"), contact.mobilePhone);
 			type(By.name("work"), contact.workPhone);
 			type(By.name("email"), contact.email);
-			type(By.name("emai2"), contact.email2);
-		    selectByTest(By.name("bday"), contact.bday);
-		    selectByTest(By.name("bmonth"), contact.bmonth);
+			type(By.name("email2"), contact.email2);
+		    selectByText(By.name("bday"), contact.bday);
+		    selectByText(By.name("bmonth"), contact.bmonth);
 		    type(By.name("byear"), contact.yearBD);
-		    //selectByTest(By.name("new_group"), "Eddie_would_go");
+		    //selectByText(By.name("new_group"), "Eddie_would_go");
 		    type(By.name("address2"), contact.address2);
 		    type(By.name("phone2"), contact.phone2);
 

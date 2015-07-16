@@ -30,8 +30,8 @@ public class ContactData {
 		this.yearBD = yearBD;
 		this.address2 = address2;
 		this.phone2 = phone2;
-		this.bday = bday;
-		this.bmonth = bmonth;
+		//this.bday = bday;
+		//this.bmonth = bmonth;
 	}
 	
 	public ContactData() {

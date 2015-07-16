@@ -18,10 +18,10 @@ public class NewContact extends TestBase {
     contact.email = "Petrov@bla.bla";
     contact.email2 = "Petrov@qwe.qwe";
     contact.yearBD = "7896";
-    contact.address2 = "home2";
+    contact.address2 = "123";
     contact.phone2 = "987654";
-    //contact.bday = "22";
-   // contact.bmonth = "May";  
+    contact.bday = "22";
+    contact.bmonth = "May";  
 	app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submit();
     app.getContactHelper().returnToHP();

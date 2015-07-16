@@ -62,7 +62,7 @@ protected void type(By locator, String text) {
 protected void click(By locator) {
 	driver.findElement(locator).click();
 }
-protected void selectByTest(By locator, String text) {
+protected void selectByText(By locator, String text) {
 	new Select(driver.findElement(locator)).selectByVisibleText(text);
 }
 
