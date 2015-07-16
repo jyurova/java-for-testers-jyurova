@@ -24,7 +24,7 @@ public class NewContact extends TestBase {
     contact.bmonth = "May";  
 	app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submit();
-    app.getContactHelper().returnToHP();
+    app.getNavigationHelper().returnToHP();
   }
  
   @Test
@@ -33,7 +33,7 @@ public class NewContact extends TestBase {
 	    app.getContactHelper().initNewContactCreation();
 	    app.getContactHelper().fillContactForm(new ContactData("", "", "", "", "", "", "", "", "", "", "", "7", "April"));
 	    app.getContactHelper().submit();
-	    app.getContactHelper().returnToHP();
+	    app.getNavigationHelper().returnToHP();
 	  }
 }
 
