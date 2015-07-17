@@ -1,8 +1,6 @@
 package com.example.tests;
 
-import java.util.Collections;
 import java.util.List;
-import static org.testng.Assert.assertEquals;
 import org.testng.annotations.Test;
 
 public class GroupCreationTests extends TestBase {
@@ -23,8 +21,8 @@ public class GroupCreationTests extends TestBase {
     //save new states
     List<GroupData> newList = app.getGroupHelper().getGroups();
     // compare states 
-    oldList.add(group);
-    Collections.sort(oldList);
-    assertEquals(newList, oldList);
+    app.getGroupHelper().compareStatesCreation(group, oldList, newList);
   }
+
+
 } 

@@ -1,8 +1,10 @@
 package com.example.fw;
 
+import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
+import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -61,5 +63,31 @@ public class GroupHelper extends HelperBase {
 		}
 		return groups;
 	}
-
+	
+	public void compareStatesRemoval(List<GroupData> oldList, int index,
+		List<GroupData> newList) {
+		oldList.remove(index);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	
+	public void compareStatesModification(GroupData group,
+			List<GroupData> oldList, int index, List<GroupData> newList) {
+		oldList.remove(index);
+	    oldList.add(group);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	
+	public void compareStatesCreation(GroupData group, List<GroupData> oldList,
+			List<GroupData> newList) {
+		oldList.add(group);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	public int random(List<GroupData> oldList) {
+		Random rnd = new Random();
+		int index = rnd.nextInt(oldList.size()-1);
+		return index;
+}
 }
