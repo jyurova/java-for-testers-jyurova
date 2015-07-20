@@ -1,6 +1,12 @@
 package com.example.fw;
 
+import static org.testng.Assert.assertEquals;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import com.example.tests.ContactData;
 
 public class ContactHelper extends HelperBase{
@@ -35,7 +41,7 @@ public class ContactHelper extends HelperBase{
 		}
 	
 	public void selectContactForEdit(int index) {
-		click(By.xpath("//img[@title='Edit'][" + index + "]"));
+		click(By.xpath("//img[@title='Edit'][" + (index+1) + "]"));
 	}
 	
 	
@@ -45,4 +51,43 @@ public class ContactHelper extends HelperBase{
 	public void submitContactModification() {
 		click(By.xpath("//input[11]"));
 	}
+
+	public List<ContactData> getContacts() {
+		List<ContactData> contacts = new ArrayList<ContactData>();
+		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
+		for (WebElement checkbox : checkboxes) {
+			ContactData contact = new ContactData();
+			String title = checkbox.getAttribute("title");
+			 contact.firstname = title.substring("Select (".length(),title.length() - ")".length());
+			contacts.add(contact);
+		}
+		return contacts;
+	}
+	
+	public void compareStatesRemoval(List<ContactData> oldList, int index,
+		List<ContactData> newList) {
+		oldList.remove(index);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	
+	public void compareStatesModification(ContactData contact,
+			List<ContactData> oldList, int index, List<ContactData> newList) {
+		oldList.remove(index);
+	    oldList.add(contact);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	
+	public void compareStatesCreation(ContactData contact, List<ContactData> oldList,
+			List<ContactData> newList) {
+		oldList.add(contact);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
+	}
+	public int random(List<ContactData> oldList) {
+		Random rnd = new Random();
+		int index = rnd.nextInt(oldList.size()-1);
+		return index;
+}
 }

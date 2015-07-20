@@ -13,7 +13,6 @@ public class GroupModificationTests extends TestBase {
 		
 		//save old state
 		List<GroupData> oldList = app.getGroupHelper().getGroups();
-		
 		int index = app.getGroupHelper().random(oldList);
 
 		//actions

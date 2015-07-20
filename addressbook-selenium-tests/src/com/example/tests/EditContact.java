@@ -1,17 +1,28 @@
 package com.example.tests;
 
+import java.util.List;
 import org.testng.annotations.Test;
 
 public class EditContact extends TestBase {
 
-@Test
-public void editContact() {
+@Test (dataProvider= "randomValidGroupGenerator")
+public void editContact(ContactData contact) {
 	app.getNavigationHelper().openMainPage();
-	app.getContactHelper().selectContactForEdit(1);
-	ContactData contact = new ContactData();
-	contact.firstname = "cracozabra";
+	   //save old state
+    List<ContactData> oldList = app.getContactHelper().getContacts();
+	int index = app.getContactHelper().random(oldList);
+ 
+    //actions
+	app.getContactHelper().selectContactForEdit(index);
 	app.getContactHelper().fillContactForm(contact);
 	app.getContactHelper().submitContactModification();
-	app.getNavigationHelper().returnToHP();
- 	}
+	app.getNavigationHelper().returnToHomePage();
+ 	
+
+	//save new state
+	List<ContactData> newList = app.getContactHelper().getContacts(); 
+	//compare states
+    app.getContactHelper().compareStatesModification(contact, oldList, index, newList);
 }
+}
+

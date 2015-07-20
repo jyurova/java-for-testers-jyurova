@@ -15,6 +15,7 @@ public class GroupRemovalTests extends TestBase {
 		
 		int index = app.getGroupHelper().random(oldList);
 
+		//actions
 		app.getGroupHelper().deleteGroup(index);
 	    app.getNavigationHelper().returnToGroupsPage();
 	    
