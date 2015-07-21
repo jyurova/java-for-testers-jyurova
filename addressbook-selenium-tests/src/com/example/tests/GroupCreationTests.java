@@ -1,10 +1,12 @@
 package com.example.tests;
 
+import java.util.Collections;
 import java.util.List;
 import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
 public class GroupCreationTests extends TestBase {
-		
+
   @Test(dataProvider = "randomValidGroupGenerator")
   public void testGroupCreationWithValidData(GroupData group) throws Exception {
 	app.getNavigationHelper().openMainPage();
@@ -19,10 +21,12 @@ public class GroupCreationTests extends TestBase {
     app.getNavigationHelper().returnToGroupsPage();
     
     //save new states
-    List<GroupData> newList = app.getGroupHelper().getGroups();
+	List<GroupData> newList = app.getGroupHelper().getGroups();
     // compare states 
-    app.getGroupHelper().compareStatesCreation(group, oldList, newList);
+	oldList.add(group);
+	Collections.sort(oldList);
+	assertEquals(newList, oldList);
   }
 
-
-} 
+	
+}

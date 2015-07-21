@@ -1,6 +1,6 @@
 package com.example.tests;
 
-public class ContactData implements Comparable<ContactData>{
+public class ContactData implements Comparable<ContactData> {
 	public String firstname;
 	public String lastName;
 	public String address;
@@ -14,6 +14,7 @@ public class ContactData implements Comparable<ContactData>{
 	public String phone2;
 	public String bday;
 	public String bmonth;
+	public String title;
 
 	public ContactData(String firstname, String lastName, String address,
 			String homePhone, String mobilePhone, String workPhone,
@@ -39,16 +40,21 @@ public class ContactData implements Comparable<ContactData>{
 
 	@Override
 	public String toString() {
-		return "ContactData [firstname=" + firstname + ", lastName=" +lastName+", address="
-	+address+",homePhone="+homePhone+", mobilePhone="+mobilePhone+", workPhone=" +workPhone+", email="
-				+email+",email2= " +email2+", address2=" +address2+ ", phone2 =" +phone2+ "]";
+		return "ContactData [firstname=" + firstname + ", lastName=" + lastName
+				+ ", homePhone=" + homePhone + ", email=" + email + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		//result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		//result = prime * result + ((email == null) ? 0 : email.hashCode());
+		//result = prime * result
+		//		+ ((firstname == null) ? 0 : firstname.hashCode());
+		//result = prime * result
+		//		+ ((homePhone == null) ? 0 : homePhone.hashCode());
+		//result = prime * result
+		//		+ ((lastName == null) ? 0 : lastName.hashCode());
 		return result;
 	}
 
@@ -61,10 +67,25 @@ public class ContactData implements Comparable<ContactData>{
 		if (getClass() != obj.getClass())
 			return false;
 		ContactData other = (ContactData) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
 		if (firstname == null) {
 			if (other.firstname != null)
 				return false;
 		} else if (!firstname.equals(other.firstname))
+			return false;
+		if (homePhone == null) {
+			if (other.homePhone != null)
+				return false;
+		} else if (!homePhone.equals(other.homePhone))
+			return false;
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
 			return false;
 		return true;
 	}
@@ -73,6 +94,4 @@ public class ContactData implements Comparable<ContactData>{
 	public int compareTo(ContactData other) {
 		return this.firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
 	}
-	
-	
 }

@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-
 import com.example.fw.ApplicationManager;
 
 public class TestBase {
@@ -27,25 +25,44 @@ public class TestBase {
 	
 	@DataProvider
 	
-	public Iterator<Object[]> randomValidGroupGenerator() {
+	public Iterator<Object[]> randomValidGroupGenerator(){
 		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i = 0; i<5; i++) {
-			GroupData group = new GroupData();		
+		for (int i=0; i<5; i++) {
+			GroupData group = new GroupData();
 			group.name = generateRandomString();
 			group.header = generateRandomString();
 			group.footer = generateRandomString();
-			list.add(new Object[]{group});
+			list.add(new Object[] {group});
 		}
 		return list.iterator();
 	}
+	
+	public Iterator<Object[]> randomValidContactGenerator(){
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (int i=0; i<5; i++) {
+			ContactData contact = new ContactData();
+			contact.firstname = generateRandomString();
+			contact.lastName = generateRandomString();
+			contact.address = generateRandomString();
+			contact.homePhone = generateRandomString();
+			contact.mobilePhone = generateRandomString();
+			contact.workPhone = generateRandomString();
+			contact.email = generateRandomString();
+			contact.email2 = generateRandomString();
+			contact.address2 = generateRandomString();
+			contact.phone2 = generateRandomString();
+		}
+			return list.iterator();
+	}	
+				
 	public String generateRandomString() {
 		Random rnd = new Random();
-			if (rnd.nextInt(3) == 0) {
-				return "";
-			} else {
-				return "test" + rnd.nextInt();
-			}
+		if (rnd.nextInt(3)==0) {
+			return "";
+		} else {
+			return  "test" + rnd.nextInt();
+		}
 		
-	}
-
+	}	
 }
+	
