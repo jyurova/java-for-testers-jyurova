@@ -8,40 +8,43 @@ public class ApplicationManager {
 	
 	public WebDriver driver;
 	public String baseUrl;
-	public boolean acceptNextAlert = true;
+	public StringBuffer verificationErrors = new StringBuffer();
 	
 	public NavigationHelper navigationHelper;
-	public  GroupHelper groupHelper;
+	public GroupHelper groupHelper;
 	public ContactHelper contactHelper;
-
+	
 	public ApplicationManager() {
-	    driver = new FirefoxDriver();
-	    baseUrl = "http://localhost/";
-	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	  
+	 driver = new FirefoxDriver();
+	 baseUrl = "http://localhost/";
+	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 	}
 	
 	public void stop() {
 	    driver.quit();
 	}
-
-public NavigationHelper getNavigationHelper() {
-	if (navigationHelper == null) {
-		navigationHelper = new NavigationHelper(this);
+	
+	public NavigationHelper getNavigationHelper() {
+		if (navigationHelper == null) {
+			navigationHelper = new NavigationHelper(this);
+		}
+		return navigationHelper;
 	}
-	return navigationHelper;
-}
-
-public GroupHelper getGroupHelper() {
-	if (groupHelper == null) {
-		groupHelper = new GroupHelper(this);
+	
+	public ContactHelper getContactHelper() {
+		if (contactHelper == null) {
+			contactHelper = new ContactHelper(this);
+		}
+		return contactHelper;
+	}	
+	
+	public GroupHelper getGroupHelper() {
+		if (groupHelper == null) {
+			groupHelper = new GroupHelper(this);
+		}
+		return groupHelper;
 	}
-	return groupHelper;
-}
-
-public ContactHelper getContactHelper() {
-	if (contactHelper == null) {
-		contactHelper = new ContactHelper(this);
-	}
-	return contactHelper;
-}
+	
+	
 }
