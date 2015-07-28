@@ -1,11 +1,11 @@
 package com.example.fw;
 
+import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.example.tests.GroupData;
 
 public class GroupHelper extends HelperBase {
@@ -54,10 +54,21 @@ public class GroupHelper extends HelperBase {
 		for (WebElement checkbox : checkboxes) {
 			GroupData group = new GroupData();
 			String title = checkbox.getAttribute("title");
-			group.name = title.substring("Select(".length(), title.length() -")".length());
+			group.name = title.substring("Select ( ".length(), title.length() -")".length());
 			groups.add(group);
 		}
 		return groups;
 	}
+	
+	//public void compareStatesForRemoval(List<GroupData> oldList, List<GroupData> newList) {
 
+
+	
+	public void compareStatesForEdit(List<GroupData> oldList, GroupData group,
+			List<GroupData> newList) {
+		oldList.remove(0);
+		oldList.add(group);
+		Collections.sort(oldList);
+		assertEquals(newList, oldList);
+	}
 }

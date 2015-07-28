@@ -1,7 +1,7 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
-	public String firstname;
+	public String firstName;
 	public String lastName;
 	public String address;
 	public String homePhone;
@@ -16,11 +16,11 @@ public class ContactData implements Comparable<ContactData> {
 	public String bmonth;
 	public String title;
 
-	public ContactData(String firstname, String lastName, String address,
+	public ContactData(String firstName, String lastName, String address,
 			String homePhone, String mobilePhone, String workPhone,
 			String email, String email2, String yearBD, String address2,
 			String phone2, String bday, String bmonth) {
-		this.firstname = firstname;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
 		this.homePhone = homePhone;
@@ -40,7 +40,7 @@ public class ContactData implements Comparable<ContactData> {
 
 	@Override
 	public String toString() {
-		return "ContactData [firstname=" + firstname + ", lastName=" + lastName
+		return "ContactData [firstName=" + firstName + ", lastName=" + lastName
 				+ ", homePhone=" + homePhone + ", email=" + email + "]";
 	}
 
@@ -72,10 +72,10 @@ public class ContactData implements Comparable<ContactData> {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firstname == null) {
-			if (other.firstname != null)
+		if (firstName == null) {
+			if (other.firstName != null)
 				return false;
-		} else if (!firstname.equals(other.firstname))
+		} else if (!firstName.equals(other.firstName))
 			return false;
 		if (homePhone == null) {
 			if (other.homePhone != null)
@@ -92,6 +92,6 @@ public class ContactData implements Comparable<ContactData> {
 
 	@Override
 	public int compareTo(ContactData other) {
-		return this.firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
+		return this.firstName.toLowerCase().compareTo(other.firstName.toLowerCase());
 	}
 }

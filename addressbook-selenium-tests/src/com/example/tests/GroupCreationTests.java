@@ -8,9 +8,12 @@ import java.util.Random;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class GroupCreationTests extends TestBase {
+	
+	@DataProvider
 	
 	public Iterator<Object[]> randomValidGroupGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
