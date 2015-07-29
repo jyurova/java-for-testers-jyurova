@@ -12,6 +12,7 @@ public class GroupRemovalTests extends TestBase{
 	public void deleteSomeGroup() {
 	app.getNavigationHelper().openMainPage();
 	app.getNavigationHelper().goToGroupsPage();
+	
 	//save old state
     List<GroupData> oldList = app.getGroupHelper().getGroups();
     

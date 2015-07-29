@@ -1,271 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="5" total="5" passed="0">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14790" started-at="2015-07-28T18:23:06Z" finished-at="2015-07-28T18:23:21Z">
+  <suite name="Default suite" duration-ms="66608" started-at="2015-07-29T21:09:58Z" finished-at="2015-07-29T21:11:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14790" started-at="2015-07-28T18:23:06Z" finished-at="2015-07-28T18:23:21Z">
-      <class name="com.example.tests.GroupCreationTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="setUp" is-config="true" duration-ms="5527" started-at="2015-07-28T21:23:06Z" finished-at="2015-07-28T21:23:12Z">
+    <test name="Default test" duration-ms="66608" started-at="2015-07-29T21:09:58Z" finished-at="2015-07-29T21:11:05Z">
+      <class name="com.example.tests.GroupModificationTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="setUp" is-config="true" duration-ms="24641" started-at="2015-07-30T01:09:58Z" finished-at="2015-07-30T01:10:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="testGroupCreationWithValidData" duration-ms="2416" started-at="2015-07-28T21:23:12Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-28T21:23:14Z">
+        <test-method status="PASS" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="modifySomeGroup" duration-ms="11338" started-at="2015-07-30T01:10:23Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-30T01:10:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=test-680741629]]]>
+                <![CDATA[GroupData [name=test1487023368]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at org.testng.Assert.assertEquals(Assert.java:514)
-	at com.example.tests.GroupCreationTests.testGroupCreationWithValidData(GroupCreationTests.java:60)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="FAIL" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="testGroupCreationWithValidData" duration-ms="1381" started-at="2015-07-28T21:23:14Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-28T21:23:16Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="modifySomeGroup" duration-ms="7139" started-at="2015-07-30T01:10:34Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-30T01:10:41Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=test-876038560]]]>
+                <![CDATA[GroupData [name=test1581102211]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at org.testng.Assert.assertEquals(Assert.java:514)
-	at com.example.tests.GroupCreationTests.testGroupCreationWithValidData(GroupCreationTests.java:60)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="FAIL" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="testGroupCreationWithValidData" duration-ms="1637" started-at="2015-07-28T21:23:16Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-28T21:23:17Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="modifySomeGroup" duration-ms="6745" started-at="2015-07-30T01:10:41Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-30T01:10:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=test786729393]]]>
+                <![CDATA[GroupData [name=]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at org.testng.Assert.assertEquals(Assert.java:514)
-	at com.example.tests.GroupCreationTests.testGroupCreationWithValidData(GroupCreationTests.java:60)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="FAIL" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="testGroupCreationWithValidData" duration-ms="1509" started-at="2015-07-28T21:23:17Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-28T21:23:19Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="modifySomeGroup" duration-ms="6886" started-at="2015-07-30T01:10:48Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-30T01:10:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=test-899188828]]]>
+                <![CDATA[GroupData [name=test-366829587]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at org.testng.Assert.assertEquals(Assert.java:514)
-	at com.example.tests.GroupCreationTests.testGroupCreationWithValidData(GroupCreationTests.java:60)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="FAIL" signature="testGroupCreationWithValidData(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="testGroupCreationWithValidData" duration-ms="1648" started-at="2015-07-28T21:23:19Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-28T21:23:20Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="modifySomeGroup(com.example.tests.GroupData)[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="modifySomeGroup" duration-ms="7892" started-at="2015-07-30T01:10:55Z" data-provider="randomValidGroupGenerator" finished-at="2015-07-30T01:11:03Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[GroupData [name=test1612025454]]]>
+                <![CDATA[GroupData [name=test1299009761]]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Lists differ at element [0]: GroupData [name=est-1745627505] != GroupData [name=wwe1] expected [GroupData [name=est-1745627505]] but found [GroupData [name=wwe1]]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:549)
-	at org.testng.Assert.assertEquals(Assert.java:514)
-	at com.example.tests.GroupCreationTests.testGroupCreationWithValidData(GroupCreationTests.java:60)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
-	at org.testng.TestNG.run(TestNG.java:1057)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testGroupCreationWithValidData -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupCreationTests@4c75cab9]" name="tearDown" is-config="true" duration-ms="661" started-at="2015-07-28T21:23:20Z" finished-at="2015-07-28T21:23:21Z">
+        </test-method> <!-- modifySomeGroup -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupModificationTests@4bb6c763]" name="tearDown" is-config="true" duration-ms="1905" started-at="2015-07-30T01:11:03Z" finished-at="2015-07-30T01:11:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.example.tests.GroupCreationTests -->
+      </class> <!-- com.example.tests.GroupModificationTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

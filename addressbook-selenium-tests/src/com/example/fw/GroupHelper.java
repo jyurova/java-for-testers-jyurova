@@ -54,21 +54,15 @@ public class GroupHelper extends HelperBase {
 		for (WebElement checkbox : checkboxes) {
 			GroupData group = new GroupData();
 			String title = checkbox.getAttribute("title");
-			group.name = title.substring("Select ( ".length(), title.length() -")".length());
+			group.name = title.substring("Select (".length(), title.length() -")".length());
 			groups.add(group);
 		}
 		return groups;
 	}
 	
-	//public void compareStatesForRemoval(List<GroupData> oldList, List<GroupData> newList) {
-
-
-	
-	public void compareStatesForEdit(List<GroupData> oldList, GroupData group,
-			List<GroupData> newList) {
-		oldList.remove(0);
+	public void compareStates(GroupData group, List<GroupData> oldList, List<GroupData> newList) {
 		oldList.add(group);
-		Collections.sort(oldList);
-		assertEquals(newList, oldList);
+	    Collections.sort(oldList);
+	    assertEquals(newList, oldList);
 	}
 }
