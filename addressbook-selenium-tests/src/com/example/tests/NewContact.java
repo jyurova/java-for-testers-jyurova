@@ -1,9 +1,10 @@
 package com.example.tests;
 
+import java.util.Collections;
 import java.util.List;
-
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
+
 public class NewContact extends TestBase {
 
   @Test
@@ -15,15 +16,15 @@ public class NewContact extends TestBase {
 	//actions
     app.getContactHelper().initContactCreation();
     ContactData contact = new ContactData();
-    contact.firstName = "first name 1";
-    contact.lastName = "last name 1";
+    contact.firstname = "first name 1";
+    contact.lastname = "last name 1";
     contact.address = "address 1";
-    contact.homePhone = "123";
-    contact.mobilePhone = "1234";
-    contact.workPhone = "q12345"; 
-    contact.email = "email1";
+    contact.home = "123";
+    contact.mobile = "1234";
+    contact.work = "q12345"; 
+    contact.email = "email1@email1.email";
     contact.email2 = "email2";
-    contact.yearBD = "1908";
+    contact.byear = "1908";
     contact.address2 = "address 2";
     contact.phone2 = "phone 2";
     app.getContactHelper().fillContactForm(contact);
@@ -34,7 +35,10 @@ public class NewContact extends TestBase {
 	List<ContactData> newList =  app.getContactHelper().getContacts();
     
     //compare states
-	assertEquals(newList.size(), oldList.size() + 1); 
+ 
+	Collections.sort(oldList);
+	oldList.add(contact);
+	assertEquals(newList, oldList);
 
   }
 }

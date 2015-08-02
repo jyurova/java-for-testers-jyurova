@@ -1,34 +1,34 @@
 package com.example.tests;
 
 public class ContactData implements Comparable<ContactData> {
-	public String firstName;
-	public String lastName;
+	public String firstname;
+	public String lastname;
 	public String address;
-	public String homePhone;
-	public String mobilePhone;
-	public String workPhone;
+	public String home;
+	public String mobile;
+	public String work;
 	public String email;
 	public String email2;
-	public String yearBD;
+	public String byear;
 	public String address2;
 	public String phone2;
 	public String bday;
 	public String bmonth;
 	public String title;
 
-	public ContactData(String firstName, String lastName, String address,
-			String homePhone, String mobilePhone, String workPhone,
-			String email, String email2, String yearBD, String address2,
+	public ContactData(String firstname, String lastname, String address,
+			String home, String mobile, String work,
+			String email, String email2, String byear, String address2,
 			String phone2, String bday, String bmonth) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.address = address;
-		this.homePhone = homePhone;
-		this.mobilePhone = mobilePhone;
-		this.workPhone = workPhone;
+		this.home = home;
+		this.mobile = mobile;
+		this.work = work;
 		this.email = email;
 		this.email2 = email2;
-		this.yearBD = yearBD;
+		this.byear = byear;
 		this.address2 = address2;
 		this.phone2 = phone2;
 		//this.bday = bday;
@@ -40,8 +40,8 @@ public class ContactData implements Comparable<ContactData> {
 
 	@Override
 	public String toString() {
-		return "ContactData [firstName=" + firstName + ", lastName=" + lastName
-				+ ", homePhone=" + homePhone + ", email=" + email + "]";
+		return "ContactData [firstname=" + firstname + ", lastname=" + lastname + ", home="
+				+ home + ", email=" + email + "]";
 	}
 
 	@Override
@@ -49,12 +49,9 @@ public class ContactData implements Comparable<ContactData> {
 		final int prime = 31;
 		int result = 1;
 		//result = prime * result + ((email == null) ? 0 : email.hashCode());
-		//result = prime * result
-		//		+ ((firstname == null) ? 0 : firstname.hashCode());
-		//result = prime * result
-		//		+ ((homePhone == null) ? 0 : homePhone.hashCode());
-		//result = prime * result
-		//		+ ((lastName == null) ? 0 : lastName.hashCode());
+		//result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		//result = prime * result + ((home == null) ? 0 : home.hashCode());
+		//result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
 		return result;
 	}
 
@@ -72,26 +69,31 @@ public class ContactData implements Comparable<ContactData> {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firstName == null) {
-			if (other.firstName != null)
+		if (firstname == null) {
+			if (other.firstname != null)
 				return false;
-		} else if (!firstName.equals(other.firstName))
+		} else if (!firstname.equals(other.firstname))
 			return false;
-		if (homePhone == null) {
-			if (other.homePhone != null)
+		if (home == null) {
+			if (other.home != null)
 				return false;
-		} else if (!homePhone.equals(other.homePhone))
+		} else if (!home.equals(other.home))
 			return false;
-		if (lastName == null) {
-			if (other.lastName != null)
+		if (lastname == null) {
+			if (other.lastname != null)
 				return false;
-		} else if (!lastName.equals(other.lastName))
+		} else if (!lastname.equals(other.lastname))
 			return false;
 		return true;
 	}
 
 	@Override
 	public int compareTo(ContactData other) {
-		return this.firstName.toLowerCase().compareTo(other.firstName.toLowerCase());
+		return this.email.toLowerCase().compareTo(other.email.toLowerCase());
 	}
+
+
+
+
+
 }

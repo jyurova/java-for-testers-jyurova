@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.example.tests.GroupData;
@@ -14,6 +15,10 @@ public class GroupHelper extends HelperBase {
 		super(manager);
 	}
 
+	public void initGroupCreation() {
+		click(By.name("new"));
+	}
+	
 	public void submitGroupCreation() {
 		click(By.name("submit"));
 	}
@@ -22,10 +27,6 @@ public class GroupHelper extends HelperBase {
 		type(By.name("group_name"), group.name);
 		type(By.name("group_header"), group.header);
 		type(By.name("group_footer"), group.footer);
-	}
-
-	public void initGroupCreation() {
-		click(By.name("new"));
 	}
 
 	public void deleteGroup(int index) {
@@ -52,9 +53,9 @@ public class GroupHelper extends HelperBase {
 		List<GroupData> groups = new ArrayList<GroupData>();
 		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
 		for (WebElement checkbox : checkboxes) {
-			GroupData group = new GroupData();
 			String title = checkbox.getAttribute("title");
-			group.name = title.substring("Select (".length(), title.length() -")".length());
+			String name = title.substring("Select (".length(), title.length() -")".length());
+			GroupData group = new GroupData().withName(name);
 			groups.add(group);
 		}
 		return groups;
@@ -65,4 +66,23 @@ public class GroupHelper extends HelperBase {
 	    Collections.sort(oldList);
 	    assertEquals(newList, oldList);
 	}
+	
+	public int random(List<GroupData> oldList) {
+		Random rnd = new Random();
+		int index = rnd.nextInt(oldList.size()-1);
+		return index;
+	}
+	
+	public void compareStatesModification(GroupData group, List<GroupData> oldList, int index,
+		List<GroupData> newList) {
+		oldList.remove(index);
+		oldList.add(group);
+		Collections.sort(oldList);
+		assertEquals(newList, oldList);
+}
+	public void compareStatesRemoval(List<GroupData> oldList, int index, List<GroupData> newList) {
+		oldList.remove(index);
+		Collections.sort(oldList);
+		assertEquals(newList, oldList);
+}
 }
