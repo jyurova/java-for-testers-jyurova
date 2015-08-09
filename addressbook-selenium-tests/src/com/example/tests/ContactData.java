@@ -40,18 +40,16 @@ public class ContactData implements Comparable<ContactData> {
 
 	@Override
 	public String toString() {
-		return "ContactData [firstname=" + firstname + ", lastname=" + lastname + ", home="
-				+ home + ", email=" + email + "]";
+		return "ContactData [firstname=" + firstname + ", lastname=" + lastname + ", title=" + title +"]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		//result = prime * result + ((email == null) ? 0 : email.hashCode());
-		//result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
-		//result = prime * result + ((home == null) ? 0 : home.hashCode());
-		//result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+		result = prime * result + ((lastname == null) ? 0 : lastname.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
 
@@ -64,32 +62,28 @@ public class ContactData implements Comparable<ContactData> {
 		if (getClass() != obj.getClass())
 			return false;
 		ContactData other = (ContactData) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
 		if (firstname == null) {
 			if (other.firstname != null)
 				return false;
 		} else if (!firstname.equals(other.firstname))
-			return false;
-		if (home == null) {
-			if (other.home != null)
-				return false;
-		} else if (!home.equals(other.home))
 			return false;
 		if (lastname == null) {
 			if (other.lastname != null)
 				return false;
 		} else if (!lastname.equals(other.lastname))
 			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
 		return true;
 	}
 
 	@Override
 	public int compareTo(ContactData other) {
-		return this.email.toLowerCase().compareTo(other.email.toLowerCase());
+		title = firstname + " " + lastname;
+		return this.title.toLowerCase().compareTo(other.title.toLowerCase());
 	}
 
 

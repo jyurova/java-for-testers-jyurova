@@ -1,7 +1,6 @@
 package com.example.tests;
 
 import org.testng.annotations.Test;
-import com.example.fw.ContactHelper;
 
 public class ContactModificationTests extends TestBase{
 	
@@ -12,7 +11,7 @@ public class ContactModificationTests extends TestBase{
 	ContactData contact = new ContactData();
 	contact.firstname = "sdf1";
 	contact.lastname = "sdfg2";
-	app.getContactHelper().fillContactForm(contact, ContactHelper.MODIFICATION);
+	app.getContactHelper().fillContactForm(contact);
 	app.getContactHelper().updateContact();
 	app.navigateTo().returnToHomePage();
 
