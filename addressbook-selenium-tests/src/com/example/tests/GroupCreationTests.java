@@ -1,28 +1,26 @@
 package com.example.tests;
 
-import java.util.List;
 import org.testng.annotations.Test;
+import com.example.fw.GroupHelper;
+import com.example.utils.SortedListOf;
 
 public class GroupCreationTests extends TestBase {
 		
   @Test(dataProvider = "randomValidGroupGenerator")
   public void testGroupCreationWithValidData(GroupData group) throws Exception {
-    app.getNavigationHelper().openMainPage();
-    app.getNavigationHelper().goToGroupsPage();
     
     //save old state
-    List<GroupData> oldList = app.getGroupHelper().getGroups();
+    GroupHelper groupHelper = app.getGroupHelper();
+    SortedListOf<GroupData> oldList = groupHelper.getGroups();
     
     //actions
-    app.getGroupHelper().initGroupCreation(); 
-	app.getGroupHelper().fillGroupForm(group);
-    app.getGroupHelper().submitGroupCreation();
-    app.getNavigationHelper().returnToGroupsPage();
+	app.getGroupHelper().createGroup(group);
+
     
     //save new state
-    List<GroupData> newList = app.getGroupHelper().getGroups();
+	SortedListOf<GroupData> newList = groupHelper.getGroups();
     
     //compare states 
-    app.getGroupHelper().compareStates(group, oldList, newList);
+    groupHelper.compareStates(group, oldList, newList);
   }
 }

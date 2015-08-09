@@ -1,88 +1,131 @@
 package com.example.fw;
 
-import static org.testng.Assert.assertEquals;
-import java.util.ArrayList;
-import java.util.Collections;
+import static org.junit.Assert.assertThat;
 import java.util.List;
 import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.example.tests.GroupData;
+import com.example.utils.SortedListOf;
+import static org.hamcrest.Matchers.*;
 
 public class GroupHelper extends HelperBase {
 
 	public GroupHelper(ApplicationManager manager) {
 		super(manager);
 	}
-
-	public void initGroupCreation() {
-		click(By.name("new"));
+	
+	private SortedListOf<GroupData> cachedGroups;
+	
+	public SortedListOf<GroupData> getGroups() {
+		if (cachedGroups == null) {
+			rebuildCache();
+		}
+		return cachedGroups;
 	}
 	
-	public void submitGroupCreation() {
-		click(By.name("submit"));
-	}
-
-	public void fillGroupForm(GroupData group) {
-		type(By.name("group_name"), group.name);
-		type(By.name("group_header"), group.header);
-		type(By.name("group_footer"), group.footer);
-	}
-
-	public void deleteGroup(int index) {
-	selectGroupByIndex(index);
-	click(By.name("delete"));
-		
-	}
-
-	public void selectGroupByIndex(int index) {
-		click(By.xpath("//input[@name='selected[]'][" + (index+1) + "]"));
-	}
-
-	public void initGroupModification(int index) {
-	selectGroupByIndex(index);
-	click(By.name("edit"));	
-	}
-
-	public void submitGroupModification() {
-	click(By.name("update"));
-		
-	}
-
-	public List<GroupData> getGroups() {
-		List<GroupData> groups = new ArrayList<GroupData>();
+	private void rebuildCache() {
+		SortedListOf<GroupData> cachedGroups = new SortedListOf<GroupData>();
+		manager.navigateTo().groupsPage();
 		List<WebElement> checkboxes = driver.findElements(By.name("selected[]"));
 		for (WebElement checkbox : checkboxes) {
 			String title = checkbox.getAttribute("title");
 			String name = title.substring("Select (".length(), title.length() -")".length());
-			GroupData group = new GroupData().withName(name);
-			groups.add(group);
+			cachedGroups.add(new GroupData().withName(name));
 		}
-		return groups;
+	}
+
+	public GroupHelper createGroup(GroupData group) {
+		manager.navigateTo().groupsPage();
+		initGroupCreation();
+		fillGroupForm(group);
+		submitGroupCreation();
+		returnToGroupsPage();
+		rebuildCache();
+		return this;
 	}
 	
-	public void compareStates(GroupData group, List<GroupData> oldList, List<GroupData> newList) {
-		oldList.add(group);
-	    Collections.sort(oldList);
-	    assertEquals(newList, oldList);
+	public GroupHelper deleteGroup(int index) {
+	selectGroupByIndex(index);
+	submitGroupDeletion();
+	returnToGroupsPage();
+	rebuildCache();
+	return this;
 	}
 	
-	public int random(List<GroupData> oldList) {
+	public GroupHelper modifyGroup(int index, GroupData group) {
+		initGroupModification(index);
+		fillGroupForm(group);
+		submitGroupModification();
+		returnToGroupsPage();
+		rebuildCache();
+		return this;
+	}
+	//----------------------------
+	
+	public void submitGroupDeletion() {
+		click(By.name("delete"));
+		cachedGroups = null;
+	}
+
+	public GroupHelper initGroupCreation() {
+		click(By.name("new"));
+		return this;
+	}
+	
+	public GroupHelper submitGroupCreation() {
+		click(By.name("submit"));
+		cachedGroups = null;
+		return this;
+	}
+
+	public GroupHelper fillGroupForm(GroupData group) {
+		type(By.name("group_name"), group.getName());
+		type(By.name("group_header"), group.getHeader());
+		type(By.name("group_footer"), group.getFooter());
+		return this;
+	}
+
+	public GroupHelper selectGroupByIndex(int index) {
+		click(By.xpath("//input[@name='selected[]'][" + (index+1) + "]"));
+		return this;
+	}
+
+	public GroupHelper initGroupModification(int index) {
+	selectGroupByIndex(index);
+	click(By.name("edit"));	
+	return this;
+	}
+
+	public GroupHelper submitGroupModification() {
+	click(By.name("update"));
+	cachedGroups = null;
+	return this;
+		
+	}
+		
+	public int random(SortedListOf<GroupData> oldList) {
 		Random rnd = new Random();
 		int index = rnd.nextInt(oldList.size()-1);
 		return index;
 	}
 	
-	public void compareStatesModification(GroupData group, List<GroupData> oldList, int index,
-		List<GroupData> newList) {
-		oldList.remove(index);
-		oldList.add(group);
-		Collections.sort(oldList);
-		assertEquals(newList, oldList);
+	public GroupHelper compareStatesModification(GroupData group, SortedListOf<GroupData> oldList, int index,
+		SortedListOf<GroupData> newList) {
+		assertThat(newList, equalTo(oldList.without(index).withAdded(group)));
+		return this;
 }
-	public void compareStatesRemoval(List<GroupData> oldList, int index, List<GroupData> newList) {
-		oldList.remove(index);
-		Collections.sort(oldList);
-		assertEquals(newList, oldList);
+	public GroupHelper compareStatesRemoval(SortedListOf<GroupData> oldList, int index, SortedListOf<GroupData> newList) {
+		assertThat(newList, equalTo(oldList.without(index)));
+		return this;
 }
+	
+	public GroupHelper compareStates(GroupData group, SortedListOf<GroupData> oldList, SortedListOf<GroupData> newList) {
+		assertThat(newList, equalTo(oldList.withAdded(group)));
+	    return this;
+	}
+	public GroupHelper returnToGroupsPage() {
+		click(By.linkText("groups"));
+		return this;
+	}
 }

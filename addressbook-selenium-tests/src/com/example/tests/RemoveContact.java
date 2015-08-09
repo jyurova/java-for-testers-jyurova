@@ -10,7 +10,7 @@ public class RemoveContact extends TestBase {
 
 @Test
 public void deleteContact() {
-	app.getNavigationHelper().openMainPage();
+	app.navigateTo().mainPage();
 	
     //save old state
 	//List<ContactData> oldList = app.getContactHelper().getContacts();

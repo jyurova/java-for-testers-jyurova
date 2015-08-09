@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import com.example.tests.ContactData;
 
 public class ContactHelper  extends HelperBase {
+	
+	public static boolean CREATION = true;
+	public static boolean MODIFICATION = false;
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
@@ -16,7 +19,7 @@ public class ContactHelper  extends HelperBase {
 		click(By.name("submit"));
 	}
 
-	public void fillContactForm(ContactData contact) {
+	public void fillContactForm(ContactData contact, boolean formType) {
 		type(By.name("firstname"), contact.firstname);
 	    type(By.name("lastname"), contact.lastname);
 	    type(By.name("address"), contact.address);
@@ -25,10 +28,17 @@ public class ContactHelper  extends HelperBase {
 	    type(By.name("work"), contact.work);
 	    type(By.name("email"), contact.email);
 	    type(By.name("email2"), contact.email2);
-	   // selectByText(By.name("bday"), "6");
-	    //selectByText(By.name("bmonth"), "May");
+	    selectByText(By.name("bday"), contact.bday);
+	    selectByText(By.name("bmonth"), contact.byear);
 	   type(By.name("byear"), contact.byear);
-	   //selectByText(By.name("new_group"), "");
+	   if (formType == CREATION){
+		 //selectByText(By.name("new_group"), "");
+	   }else {
+		   if (driver.findElements(By.name("new_group")).size() != 0) {
+			   throw new Error ("Group selector exists in contact modification form");
+		   }
+	   }
+	   
 	    type(By.name("address2"), contact.address2);
 	    type(By.name("phone2"), contact.phone2);
 	}

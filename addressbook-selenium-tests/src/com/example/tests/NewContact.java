@@ -1,19 +1,13 @@
 package com.example.tests;
 
-import java.util.Collections;
-import java.util.List;
 import org.testng.annotations.Test;
-import static org.testng.Assert.assertEquals;
+import static com.example.fw.ContactHelper.CREATION;
 
 public class NewContact extends TestBase {
 
   @Test
   public void testNonEmptyContactCreation() throws Exception {
-	app.getNavigationHelper().openMainPage();
-	//save old state
-	List<ContactData> oldList =  app.getContactHelper().getContacts();
-	
-	//actions
+	app.navigateTo().mainPage();
     app.getContactHelper().initContactCreation();
     ContactData contact = new ContactData();
     contact.firstname = "first name 1";
@@ -27,18 +21,9 @@ public class NewContact extends TestBase {
     contact.byear = "1908";
     contact.address2 = "address 2";
     contact.phone2 = "phone 2";
-    app.getContactHelper().fillContactForm(contact);
+    app.getContactHelper().fillContactForm(contact, CREATION);
     app.getContactHelper().submit();
-    app.getNavigationHelper().returnToHomePage();
+    app.navigateTo().returnToHomePage();
     
-    //save new state
-	List<ContactData> newList =  app.getContactHelper().getContacts();
-    
-    //compare states
- 
-	Collections.sort(oldList);
-	oldList.add(contact);
-	assertEquals(newList, oldList);
-
-  }
+}
 }
