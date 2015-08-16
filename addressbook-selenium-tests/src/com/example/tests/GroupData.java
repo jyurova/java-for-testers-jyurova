@@ -1,9 +1,9 @@
 package com.example.tests;
 
 public class GroupData implements Comparable<GroupData> {
-	private String name;
-	private String header;
-	private String footer;
+	public String name;
+	public String header;
+	public String footer;
 
 	public GroupData(String groupname, String header, String footer) {
 		this.name = groupname;
