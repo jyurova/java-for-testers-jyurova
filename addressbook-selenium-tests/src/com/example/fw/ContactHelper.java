@@ -57,7 +57,7 @@ public class ContactHelper  extends HelperBase {
 		for (WebElement checkbox : checkboxes) {
 			ContactData contact = new ContactData();
 			String title = checkbox.getAttribute("title");
-			contact.firstname = title.substring("Select (".length(), title.length() - ")".length());
+			contact.title = title.substring("Select (".length(), title.length() - ")".length());
 			contacts.add(contact);
 		}
 		return contacts;

@@ -25,6 +25,7 @@ public class NewContact extends TestBase {
     contact.byear = "1908";
     contact.address2 = "address 2";
     contact.phone2 = "phone 2";
+    contact.title = contact.firstname + " " + contact.lastname;
     app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submit();
     app.navigateTo().returnToHomePage();
@@ -35,7 +36,8 @@ public class NewContact extends TestBase {
     
     //compare states
     assertEquals(newList.size(), oldList.size() +1);
-    oldList.add(contact);
+ // oldList.add(contact);
+    oldList.add(new ContactData(contact.title));
     Collections.sort(oldList);
     assertEquals(newList, oldList);
     
