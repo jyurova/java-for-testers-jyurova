@@ -35,8 +35,6 @@ public class NewContact extends TestBase {
 	
     
     //compare states
-    assertEquals(newList.size(), oldList.size() +1);
- // oldList.add(contact);
     oldList.add(new ContactData(contact.title));
     Collections.sort(oldList);
     assertEquals(newList, oldList);

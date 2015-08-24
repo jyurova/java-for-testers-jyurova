@@ -39,7 +39,7 @@ public class ContactHelper  extends HelperBase {
 	}
 
 	public void chooseContactForEdit(int index) {
-		click(By.xpath("//img[@title='Edit'][" + index + "]"));
+		click(By.xpath("//img[@title='Edit'][" + (index+1) + "]"));
 	}
 	
 	public void deleteContact() {
