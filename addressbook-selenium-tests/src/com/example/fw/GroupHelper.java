@@ -100,8 +100,7 @@ public class GroupHelper extends HelperBase {
 	public GroupHelper submitGroupModification() {
 	click(By.name("update"));
 	cachedGroups = null;
-	return this;
-		
+	return this;		
 	}
 		
 	public int random(SortedListOf<GroupData> oldList) {
@@ -124,6 +123,7 @@ public class GroupHelper extends HelperBase {
 		assertThat(newList, equalTo(oldList.withAdded(group)));
 	    return this;
 	}
+	
 	public GroupHelper returnToGroupsPage() {
 		click(By.linkText("groups"));
 		return this;

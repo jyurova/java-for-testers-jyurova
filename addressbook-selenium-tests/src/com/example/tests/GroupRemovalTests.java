@@ -22,5 +22,4 @@ public class GroupRemovalTests extends TestBase{
     //compare states 
 	app.getGroupHelper().compareStatesRemoval(oldList, index, newList);
   }
-
 	}

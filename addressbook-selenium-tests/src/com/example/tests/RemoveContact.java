@@ -1,10 +1,6 @@
 package com.example.tests;
 
-import static org.testng.Assert.assertEquals;
-
-import java.util.Collections;
 import java.util.List;
-
 import org.testng.annotations.Test;
 
 public class RemoveContact extends TestBase {
@@ -15,8 +11,10 @@ public void deleteContact() {
 	//save old state
 	List<ContactData> oldList = app.getContactHelper().getContacts();
 	
+	int index = app.getContactHelper().random(oldList);
+	
 	//actions
-	app.getContactHelper().chooseContactForEdit(0); 
+	app.getContactHelper().chooseContactForEdit(index); 
 	app.getContactHelper().deleteContact();
 	app.navigateTo().returnToHomePage();
 	  
@@ -25,9 +23,9 @@ public void deleteContact() {
 	
     
     //compare states
-    oldList.remove(0);
-    Collections.sort(oldList);
-    assertEquals(newList, oldList);
+    app.getContactHelper().compareStatesRemoval(oldList, index, newList);
     
-} 
+}
+
+ 
 }

@@ -1,10 +1,12 @@
 package com.example.fw;
 
+import static org.testng.Assert.assertEquals;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.example.tests.ContactData;
 
 public class ContactHelper  extends HelperBase {
@@ -39,7 +41,8 @@ public class ContactHelper  extends HelperBase {
 	}
 
 	public void chooseContactForEdit(int index) {
-		click(By.xpath("//img[@title='Edit'][" + (index+1) + "]"));
+		click(By.xpath("//img[@title='Details'][" + (index+1) + "]"));
+		click(By.xpath("(//input[@name='modifiy'])"));
 	}
 	
 	public void deleteContact() {
@@ -48,8 +51,7 @@ public class ContactHelper  extends HelperBase {
 	
 	public void updateContact() {
 		click(By.xpath("(//input[@name='update'])[1]"));
-		
-	}
+		}
 
 	public List<ContactData> getContacts() {
 		List<ContactData> contacts = new ArrayList<ContactData>();
@@ -61,6 +63,42 @@ public class ContactHelper  extends HelperBase {
 			contacts.add(contact);
 		}
 		return contacts;
+	} 
+	
+	public void compareStatesContactCreation(ContactData contact, List<ContactData> oldList, List<ContactData> newList) {
+		oldList.add(new ContactData(contact.title));
+	    Collections.sort(oldList);
+	    Collections.sort(newList);
+	    assertEquals(newList, oldList);
+}
+	
+	public int random(List<ContactData> oldList) {
+		Random rnd = new Random();
+		int index = rnd.nextInt(oldList.size()-1);
+		return index;
 	}
-
+	
+	public ContactData modifyContact(int index, ContactData contact) {
+		chooseContactForEdit(index);
+		fillContactForm(contact);
+		updateContact();
+		manager.navigateTo().returnToHomePage();
+		return contact;
+	}
+	
+	public void compareStatesModification(List<ContactData> oldList, int index, ContactData contact,
+			List<ContactData> newList) {
+		oldList.remove(index);
+		oldList.add(new ContactData(contact.title));
+		Collections.sort(oldList);
+		Collections.sort(newList);
+		assertEquals(newList, oldList);
+	}
+	
+	public void compareStatesRemoval(List<ContactData> oldList, int index, List<ContactData> newList) {
+		oldList.remove(index);
+	    Collections.sort(oldList);
+	    Collections.sort(newList);
+	    assertEquals(newList, oldList);
+	}
 }

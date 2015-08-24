@@ -87,5 +87,4 @@ public class GroupData implements Comparable<GroupData> {
 	public void setFooter(String footer) {
 		this.footer = footer;
 	}	
-
 }

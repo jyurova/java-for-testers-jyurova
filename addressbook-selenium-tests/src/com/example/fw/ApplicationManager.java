@@ -46,6 +46,4 @@ public class ApplicationManager {
 		}
 		return groupHelper;
 	}
-	
-	
 }
