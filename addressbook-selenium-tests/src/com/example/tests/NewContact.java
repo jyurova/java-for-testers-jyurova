@@ -1,28 +1,28 @@
 package com.example.tests;
 
-import java.util.List;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+
 import org.testng.annotations.Test;
+import com.example.utils.SortedListOf;
+
+import static com.example.fw.ContactHelper.CREATION;
 
 public class NewContact extends TestBase {
 		
   @Test(dataProvider = "randomValidContactGenerator")
   public void testContactCreationwithValidData(ContactData contact) throws Exception {
-	app.navigateTo().mainPage();
 	
 	//save old state
-	List<ContactData> oldList = app.getContactHelper().getContacts();
+	  SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 	
 	//actions
-    app.getContactHelper().initContactCreation();
-    app.getContactHelper().fillContactForm(contact);
-    app.getContactHelper().submit();
-    app.navigateTo().returnToHomePage();
+    app.getContactHelper().createContact(contact, CREATION);
     
     //save new state
-	List<ContactData> newList = app.getContactHelper().getContacts();
+    SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 
-	//compare states
-    app.getContactHelper().compareStatesContactCreation(contact, oldList, newList);
-    
+	//compare states (подправить в соответствии с отзывом из предыдущего ДЗ)
+	assertThat(newList, equalTo(oldList.withAdded(contact.title)));  
 }
 }

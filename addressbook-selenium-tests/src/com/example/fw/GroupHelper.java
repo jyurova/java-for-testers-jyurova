@@ -1,13 +1,11 @@
 package com.example.fw;
 
-import static org.junit.Assert.assertThat;
 import java.util.List;
 import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import com.example.tests.GroupData;
 import com.example.utils.SortedListOf;
-import static org.hamcrest.Matchers.*;
 
 public class GroupHelper extends HelperBase {
 
@@ -108,22 +106,7 @@ public class GroupHelper extends HelperBase {
 		int index = rnd.nextInt(oldList.size()-1);
 		return index;
 	}
-	
-	public GroupHelper compareStatesModification(GroupData group, SortedListOf<GroupData> oldList, int index,
-		SortedListOf<GroupData> newList) {
-		assertThat(newList, equalTo(oldList.without(index).withAdded(group)));
-		return this;
-}
-	public GroupHelper compareStatesRemoval(SortedListOf<GroupData> oldList, int index, SortedListOf<GroupData> newList) {
-		assertThat(newList, equalTo(oldList.without(index)));
-		return this;
-}
-	
-	public GroupHelper compareStates(GroupData group, SortedListOf<GroupData> oldList, SortedListOf<GroupData> newList) {
-		assertThat(newList, equalTo(oldList.withAdded(group)));
-	    return this;
-	}
-	
+		
 	public GroupHelper returnToGroupsPage() {
 		click(By.linkText("groups"));
 		return this;

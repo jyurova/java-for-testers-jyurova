@@ -31,9 +31,4 @@ public class NavigationHelper extends HelperBase {
 		return false;
 	}
 	}
-
-	public void returnToHomePage() {
-		click(By.linkText("home page"));
-	}
-
 }
