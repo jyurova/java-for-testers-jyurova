@@ -16,6 +16,8 @@ public class ContactHelper  extends HelperBase {
 		super(manager);
 	}
 	
+	//CACHE
+	
 	private SortedListOf<ContactData> cachedContacts;
 	
 	public SortedListOf<ContactData> getContacts() {
