@@ -1,5 +1,7 @@
 package com.example.tests;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
 import org.testng.annotations.Test;
 import com.example.utils.SortedListOf;
 import static com.example.fw.ContactHelper.MODIFICATION;;
@@ -21,7 +23,7 @@ public class ContactModificationTests extends TestBase{
     //save new state
 	SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
     
-    //compare states (подправить в соответствии с отзывом из предыдущего ДЗ)
-	assertThat(newList, equalTo(oldList.without(index).withAdded(contact.title)));
+    //compare states 
+	assertThat(newList, equalTo(oldList.without(index).withAdded(contact)));
 }
 } 

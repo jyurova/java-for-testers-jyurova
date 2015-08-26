@@ -22,7 +22,7 @@ public class NewContact extends TestBase {
     //save new state
     SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 
-	//compare states (подправить в соответствии с отзывом из предыдущего ДЗ)
-	assertThat(newList, equalTo(oldList.withAdded(contact.title)));  
+	//compare states 
+	assertThat(newList, equalTo(oldList.withAdded(contact)));  
 }
 }
