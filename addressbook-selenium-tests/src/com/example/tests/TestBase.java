@@ -3,11 +3,11 @@ package com.example.tests;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import static com.example.tests.GroupDataGenerator.generateRandomGroups;
+import static com.example.tests.ContactDataGenerator.generateRandomContacts;
 import com.example.fw.ApplicationManager;
 
 public class TestBase {
@@ -40,36 +40,16 @@ public class TestBase {
 		return list;
 	}
 
-		@DataProvider
-		public Iterator<Object[]> randomValidContactGenerator() {
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator() {
+		return wrapContactsDataForDataProvider(generateRandomContacts(5)).iterator();
+	}
+		
+		public static List<Object[]> wrapContactsDataForDataProvider(List<ContactData> contacts) {
 			List<Object[]> list = new ArrayList<Object[]>();
-			for (int i = 0; i < 5; i++){
-				ContactData contact = new ContactData()
-					.withFirstname (generateRandomString()) 
-					.withLastname  (generateRandomString())
-					.withAddress  (generateRandomString())
-					.withHome  (generateRandomString())
-					.withMobile  (generateRandomString())
-					.withWork  (generateRandomString())
-					.withEmail  (generateRandomString())
-					.withEmail2  (generateRandomString())
-					//.withByear  (generateRandomString())
-					.withPhone2  (generateRandomString())
-					.withAddress2  (generateRandomString())
-					//.withBday  (generateRandomString())
-					.withBmonth  (generateRandomString()); 
-				contact.title = contact.getFirstname() + " " + contact.getLastname();
+			for (ContactData contact : contacts) {
 				list.add(new Object[]{contact});
 			}
-			return list.iterator();
-		}
-
-		public String generateRandomString() {
-			Random rnd = new Random();
-			if (rnd.nextInt(3) == 0 ) {
-				return " ";
-			}else{
-				return "test" + rnd.nextInt();
-			}
-		}
+		return list;
+	}
 }
