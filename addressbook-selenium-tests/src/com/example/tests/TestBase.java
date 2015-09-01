@@ -7,7 +7,7 @@ import java.util.Random;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
-
+import static com.example.tests.GroupDataGenerator.generateRandomGroups;
 import com.example.fw.ApplicationManager;
 
 public class TestBase {
@@ -29,18 +29,17 @@ public class TestBase {
 	@DataProvider
 	
 	public Iterator<Object[]> randomValidGroupGenerator() {
-		List<Object[]> list = new ArrayList<Object[]>();
-		
-		for (int i = 0; i < 5; i++) {
-			GroupData group = new GroupData()
-					.withName(generateRandomString())
-					.withHeader(generateRandomString()) 
-					.withFooter(generateRandomString());
-			list.add(new Object[]{group});
-		}
-		return list.iterator();
+		return wrapGroupDataForDataProvider(generateRandomGroups(5)).iterator();
 	}
 	
+		public static List<Object[]> wrapGroupDataForDataProvider(List<GroupData> groups) {
+			List<Object[]> list = new ArrayList<Object[]>();
+			for (GroupData group : groups) {
+				list.add(new Object[]{group});
+			}
+		return list;
+	}
+
 		@DataProvider
 		public Iterator<Object[]> randomValidContactGenerator() {
 			List<Object[]> list = new ArrayList<Object[]>();
@@ -68,7 +67,7 @@ public class TestBase {
 		public String generateRandomString() {
 			Random rnd = new Random();
 			if (rnd.nextInt(3) == 0 ) {
-				return "1";
+				return " ";
 			}else{
 				return "test" + rnd.nextInt();
 			}

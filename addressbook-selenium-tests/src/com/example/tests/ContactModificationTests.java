@@ -4,7 +4,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 import org.testng.annotations.Test;
 import com.example.utils.SortedListOf;
-import static com.example.fw.ContactHelper.MODIFICATION;;
 
 public class ContactModificationTests extends TestBase{
 	
@@ -18,7 +17,7 @@ public class ContactModificationTests extends TestBase{
 	int index = app.getContactHelper().random(oldList);
 	
 	//actions
-	app.getContactHelper().modifyContact(index, contact, MODIFICATION);
+	app.getContactHelper().modifyContact(index, contact);
 
     //save new state
 	SortedListOf<ContactData> newList = app.getContactHelper().getContacts();

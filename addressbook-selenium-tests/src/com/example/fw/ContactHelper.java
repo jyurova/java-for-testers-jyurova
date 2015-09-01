@@ -8,9 +8,6 @@ import com.example.tests.ContactData;
 import com.example.utils.SortedListOf;
 
 public class ContactHelper  extends HelperBase {
-	
-	public static boolean CREATION = true;
-	public static boolean MODIFICATION = false; 
 
 	public ContactHelper(ApplicationManager manager) {
 		super(manager);
@@ -40,10 +37,10 @@ public class ContactHelper  extends HelperBase {
 	}
 	}
 
-	public ContactHelper createContact(ContactData contact, boolean fotmType) {
+	public ContactHelper createContact(ContactData contact) {
 		manager.navigateTo().mainPage();
     	initContactCreation();
-    	fillContactForm(contact, CREATION);
+    	fillContactForm(contact);
     	submit();
     	returnToHomePage();
     	rebuildCache();
@@ -51,10 +48,10 @@ public class ContactHelper  extends HelperBase {
 		
 	}
 
-	public ContactHelper modifyContact(int index, ContactData contact, boolean fotmType) {
+	public ContactHelper modifyContact(int index, ContactData contact) {
 		manager.navigateTo().mainPage();
 		chooseContactForEdit(index);
-		fillContactForm(contact, MODIFICATION);
+		ñontactModification(contact);
 		updateContact();
 		returnToHomePage();
 		rebuildCache();
@@ -95,7 +92,7 @@ public class ContactHelper  extends HelperBase {
 		return this;
 	}
 
-	public ContactHelper fillContactForm(ContactData contact, boolean fotmType) {
+	public ContactHelper fillContactForm(ContactData contact) {
 		type(By.name("firstname"), contact.getFirstname());
 	    type(By.name("lastname"), contact.getLastname());
 	    type(By.name("address"), contact.getAddress());
@@ -107,22 +104,21 @@ public class ContactHelper  extends HelperBase {
 	    selectByText(By.name("bday"), contact.getBday());
 	    selectByText(By.name("bmonth"), contact.getByear());
 	    type(By.name("byear"), contact.getByear());
-	    if (fotmType == CREATION){
-	    	//selectByText(By.name("new_group"), "group 1");
-	    } else {
-	    	if (driver.findElements(By.name("new_group")).size() !=0){
-	    		throw new Error ("Group selector exists in contact modification form");
-	    	}
-	    }		 
+	    selectByText(By.name("new_group"), "group 1"); 
 	    type(By.name("address2"), contact.getAddress2());
 	    type(By.name("phone2"), contact.getPhone2());
 	    return this;
 	}
 	
-	public ContactHelper updateContact() {
+	public ContactHelper ñontactModification(ContactData contact) {
+		type(By.name("firstname"), contact.getFirstname());
+	    type(By.name("lastname"), contact.getLastname());
+	    return this;
+	}
+	
+	public void updateContact() {
 		click(By.xpath("(//input[@name='update'])[1]"));
 		cachedContacts = null;
-		return this;
 		}
 		
 	public int random(List<ContactData> oldList) {
