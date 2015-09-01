@@ -26,23 +26,12 @@ public class TestBase {
 
 	  }
 	
-	@DataProvider
-	
-	public Iterator<Object[]> randomValidGroupGenerator() {
-		return wrapGroupDataForDataProvider(generateRandomGroups(5)).iterator();
-	}
-	
 		public static List<Object[]> wrapGroupDataForDataProvider(List<GroupData> groups) {
 			List<Object[]> list = new ArrayList<Object[]>();
 			for (GroupData group : groups) {
 				list.add(new Object[]{group});
 			}
 		return list;
-	}
-
-	@DataProvider
-	public Iterator<Object[]> randomValidContactGenerator() {
-		return wrapContactsDataForDataProvider(generateRandomContacts(5)).iterator();
 	}
 		
 		public static List<Object[]> wrapContactsDataForDataProvider(List<ContactData> contacts) {
